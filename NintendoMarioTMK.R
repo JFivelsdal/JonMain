@@ -3,10 +3,6 @@ library(stringr)
 library(plyr)
 library(xlsx)
 
-#Need the following statement since rJava has problems on my computer
-#Sys.setenv(JAVA_HOME='C:\Program Files\Java\jre7')
-
-
 
 webTMK <- "http://www.themushroomkingdom.net/" #Main page for the fan website The Mushroom Kingdom (TMK)
 
@@ -57,6 +53,8 @@ colnames(gameConsoleDataFrame ) <- c("Mario Games","Console")
 rownames(gameConsoleDataFrame) <- NULL
 
 write.xlsx(gameConsoleDataFrame,"MarioAppearCategories.xlsx") # Excel spreadsheet that contains game names and categories (console names are abbreviated)
+
+colnames(gameConsoleDataFrame ) <- c("Mario.Games","Console")
 
 #catPos stores the row numbers where Categories or Console Names are mentioned instead of names of games in the games column
 
